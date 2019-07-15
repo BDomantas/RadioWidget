@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import RadioWidget from './src/containers/RadioWidget';
+import RadioWidget from './src/components/radioWidget/RadioWidget';
 import {View} from 'react-native';
 const mockData = [
   {
@@ -46,15 +46,15 @@ const mockData = [
 const App = () => {
   // EXAMPLE 1
   // return (
-  //   <View style={{flex: 1, justifyContent: 'center'}}>
-  //     <View style={{flexDirection: 'row', flex: 1}}>
-  //       <RadioWidget stations={mockData} />
-  //       <RadioWidget />
-  //     </View>
-  //     <View style={{flex: 1, justifyContent: 'center'}}>
-  //       <RadioWidget stations={mockData} />
-  //     </View>
+  // <View style={{flex: 1, justifyContent: 'center'}}>
+  //   <View style={{flexDirection: 'row', flex: 1}}>
+  //     <RadioWidget stations={mockData} />
+  //     <RadioWidget />
   //   </View>
+  //   <View style={{flex: 1, justifyContent: 'center'}}>
+  //     <RadioWidget stations={mockData} />
+  //   </View>
+  // </View>
   // );
   // EXAMPLE 2
   return (
