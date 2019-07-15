@@ -223,6 +223,12 @@ RadioWidget.defaultProps = {
 };
 
 RadioWidget.propTypes = {
+  stations: PropTypes.arrayOf(PropTypes.shape({
+      uuid: PropTypes.string,
+      name: PropTypes.string,
+      image:PropTypes.string,
+      mhz: PropTypes.string,
+  })),
   onSelect: PropTypes.func,
   onDecrease: PropTypes.func,
   onIncrease: PropTypes.func,
@@ -231,6 +237,7 @@ RadioWidget.propTypes = {
   emptyListPlaceholder: PropTypes.string,
   footerTitle: PropTypes.string,
   keepAspectRatio: PropTypes.bool,
+  headerTitle: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
