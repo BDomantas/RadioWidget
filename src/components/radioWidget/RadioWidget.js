@@ -11,8 +11,8 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import Header from '../components/radioWidget/Header';
-import Footer from '../components/radioWidget/Footer';
+import Header from './Header';
+import Footer from './Footer';
 import PropTypes from 'prop-types';
 
 /**
@@ -187,13 +187,14 @@ export default class RadioWidget extends Component {
       onBack,
       footerTitle,
       keepAspectRatio,
+      headerTitle,
     } = this.props;
     return (
       <View
         style={[styles.main, keepAspectRatio ? { aspectRatio: 16 / 25 } : null]}
         onLayout={this.onLayout}
       >
-        <Header onSwitch={onSwitch} onBack={onBack} />
+        <Header headerTitle={headerTitle} onSwitch={onSwitch} onBack={onBack} />
         <FlatList
           extraData={this.state}
           data={stations}
@@ -210,13 +211,13 @@ export default class RadioWidget extends Component {
 }
 
 RadioWidget.defaultProps = {
-  /** Called on @param item  */
   onSelect: item => console.info('RadioWidget. [onSelect] ', item),
   onDecrease: item => console.info('RadioWidget. [onDecrease] ', item),
   onIncrease: item => console.info('RadioWidget. [onIncrease] ', item),
   onSwitch: () => console.info('RadioWidget. [onSwitch]'),
   onBack: () => console.info('RadioWidget. [onBack]'),
   emptyListPlaceholder: 'No stations are available :(',
+  headerTitle: 'STATIONS',
   footerTitle: 'Currently playing',
   keepAspectRatio: false,
 };

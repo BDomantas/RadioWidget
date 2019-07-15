@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const Header = ({ onBack, onSwitch }) => {
+const Header = ({ onBack, onSwitch, headerTitle }) => {
   return (
     <View style={styles.main}>
       <TouchableOpacity style={styles.iconButtons} onPress={onBack}>
@@ -10,7 +10,7 @@ const Header = ({ onBack, onSwitch }) => {
           style={styles.iconImages}
         />
       </TouchableOpacity>
-      <Text style={styles.title}>STATIONS</Text>
+      <Text style={styles.title}>{headerTitle}</Text>
       <TouchableOpacity
         style={[styles.iconButtons, { alignItems: 'flex-end' }]}
         onPress={onSwitch}
